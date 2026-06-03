@@ -1,0 +1,5 @@
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend guidelines entry point for Vue 3 component patterns and conventions"}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Frontend directory layout for project structure decisions"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Component patterns and props conventions for Vue 3 components"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Code quality standards and forbidden patterns"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Cross-layer data flow thinking for page routing and navigation"}
