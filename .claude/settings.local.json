@@ -12,7 +12,9 @@
       "Bash(git init *)",
       "Bash(git commit *)",
       "Bash(git add *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(bit-mouse/school-web)",
+      "Bash(git push *)"
     ]
   }
 }
