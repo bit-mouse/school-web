@@ -8,7 +8,7 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 4
+- **Total Sessions**: 5
 - **Last Active**: 2026-06-07
 <!-- @@@/auto:current-status -->
 
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~140 | Active |
+| `journal-1.md` | ~173 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits | Branch |
 |---|------|-------|---------|--------|
+| 5 | 2026-06-07 | 新增学院详情页功能 | `72ee970` | `main` |
 | 4 | 2026-06-07 | 华文大学 → 君子大学 改名 | `cd49459` | `main` |
 | 3 | 2026-06-07 | 收尾 — 权限配置提交 | `e88f9e9` | `main` |
 | 2 | 2026-06-07 | 推送 GitHub + 更新 CLAUDE.md | `7916020` | `main` |

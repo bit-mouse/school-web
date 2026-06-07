@@ -138,3 +138,36 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 5: 新增学院详情页功能
+
+**Date**: 2026-06-07
+**Task**: 新增学院详情页功能
+**Branch**: `main`
+
+### Summary
+
+新增 /departments/:id 路由和 DepartmentDetailView.vue，学院卡片可点击跳转，详情页展示简介、专业、联系方式、师资、科研方向、学院领导等完整信息。
+
+### Main Changes
+
+(Add details)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `72ee970` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
