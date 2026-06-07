@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const timeline = [
-  { year: '1952', event: '华文大学创建，初名北京华文学院，设文、理、工三科' },
+  { year: '1952', event: '君子大学创建，初名北京华文学院，设文、理、工三科' },
   { year: '1960', event: '成为全国重点大学，新增医学、法学学科' },
   { year: '1978', event: '恢复高考后首批招收研究生，开启学位教育' },
-  { year: '1985', event: '更名为华文大学，确立综合性大学发展定位' },
+  { year: '1985', event: '更名为君子大学，确立综合性大学发展定位' },
   { year: '1995', event: '进入"211工程"重点建设高校行列' },
   { year: '2001', event: '进入"985工程"优势学科创新平台' },
   { year: '2017', event: '入选国家"双一流"建设高校A类名单' },
@@ -35,7 +35,7 @@ const scenerySpots = [
     <section class="about-banner">
       <div class="container">
         <h1 class="about-banner-title">学校概况</h1>
-        <p class="about-banner-subtitle">了解华文大学的历史与发展</p>
+        <p class="about-banner-subtitle">了解君子大学的历史与发展</p>
       </div>
     </section>
 
@@ -45,7 +45,7 @@ const scenerySpots = [
         <h2 class="section-title">学校简介</h2>
         <div class="about-intro">
           <p>
-            华文大学是教育部直属全国重点大学，国家"双一流"建设高校A类名单入选高校，
+            君子大学是教育部直属全国重点大学，国家"双一流"建设高校A类名单入选高校，
             "211工程"和"985工程"重点建设高校。学校坐落于北京市海淀区，校园占地3200余亩，
             环境优美，设施先进，是求学治学的理想之地。
           </p>

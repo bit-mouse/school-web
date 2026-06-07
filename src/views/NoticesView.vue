@@ -14,7 +14,7 @@ const noticesList: NoticeItem[] = [
   { id: 3, title: '关于开展校园安全大检查的通知', date: '2026-05-28', department: '保卫处' },
   { id: 4, title: '关于2026年职称评审工作的通知', date: '2026-05-25', department: '人事处' },
   { id: 5, title: '2026年秋季学期选课通知', date: '2026-05-22', department: '教务处' },
-  { id: 6, title: '关于举办华文大学建校七十周年纪念活动的通知', date: '2026-05-18', department: '校办公室' },
+  { id: 6, title: '关于举办君子大学建校七十周年纪念活动的通知', date: '2026-05-18', department: '校办公室' },
   { id: 7, title: '关于调整校园停车管理规定的通知', date: '2026-05-15', department: '后勤处' },
   { id: 8, title: '2026年度大学生创新创业项目申报通知', date: '2026-05-10', department: '教务处' },
   { id: 9, title: '关于开展2026年度教职工体检的通知', date: '2026-05-05', department: '人事处' },
@@ -28,7 +28,7 @@ const noticesList: NoticeItem[] = [
     <section class="notices-banner">
       <div class="container">
         <h1 class="notices-banner-title">通知公告</h1>
-        <p class="notices-banner-subtitle">华文大学校内公告信息</p>
+        <p class="notices-banner-subtitle">君子大学校内公告信息</p>
       </div>
     </section>
 

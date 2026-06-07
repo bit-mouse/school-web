@@ -11,7 +11,7 @@ const departments: Department[] = [
   {
     id: 1,
     name: '文学院',
-    intro: '华文大学文学院是学校历史最悠久的学院之一，拥有中国语言文学一级学科博士学位授权点，在古典文学、现当代文学、语言学等领域具有深厚的学术积淀。',
+    intro: '君子大学文学院是学校历史最悠久的学院之一，拥有中国语言文学一级学科博士学位授权点，在古典文学、现当代文学、语言学等领域具有深厚的学术积淀。',
     majors: ['汉语言文学', '汉语言', '古典文献学', '应用语言学', '比较文学与世界文学'],
     color: '#1a3a5c'
   },
@@ -87,7 +87,7 @@ const departments: Department[] = [
     <section class="departments-banner">
       <div class="container">
         <h1 class="departments-banner-title">院系介绍</h1>
-        <p class="departments-banner-subtitle">华文大学设有20个学院（系），涵盖九大学科门类</p>
+        <p class="departments-banner-subtitle">君子大学设有20个学院（系），涵盖九大学科门类</p>
       </div>
     </section>
 

@@ -30,7 +30,7 @@ function toggleMenu() {
       <div class="logo" @click="navigate('/')">
         <span class="logo-icon">华</span>
         <div class="logo-text">
-          <span class="logo-name">华文大学</span>
+          <span class="logo-name">君子大学</span>
           <span class="logo-en">Huawen University</span>
         </div>
       </div>

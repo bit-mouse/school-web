@@ -9,10 +9,10 @@ const currentYear = new Date().getFullYear()
         <div class="footer-info">
           <div class="footer-logo">
             <span class="footer-logo-icon">华</span>
-            <span class="footer-logo-name">华文大学</span>
+            <span class="footer-logo-name">君子大学</span>
           </div>
           <p class="footer-desc">
-            华文大学创建于1952年，是一所具有深厚历史底蕴和优良学术传统的综合性大学，
+            君子大学创建于1952年，是一所具有深厚历史底蕴和优良学术传统的综合性大学，
             致力于培养高素质创新型人才，服务国家和社会发展。
           </p>
         </div>
@@ -40,7 +40,7 @@ const currentYear = new Date().getFullYear()
       </div>
 
       <div class="footer-bottom">
-        <p>Copyright &copy; {{ currentYear }} 华文大学 版权所有</p>
+        <p>Copyright &copy; {{ currentYear }} 君子大学 版权所有</p>
         <p>京ICP备12345678号-1</p>
       </div>
     </div>

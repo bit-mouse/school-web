@@ -9,7 +9,7 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { id: 1, title: '博学笃行 厚德载物', subtitle: '华文大学2026年招生工作进行中', color: '#1a3a5c' },
+  { id: 1, title: '博学笃行 厚德载物', subtitle: '君子大学2026年招生工作进行中', color: '#1a3a5c' },
   { id: 2, title: '科技创新 引领未来', subtitle: '我校科研团队取得重大突破', color: '#2a5a3c' },
   { id: 3, title: '国际交流 开放办学', subtitle: '与世界一流大学深度合作', color: '#5a2a3c' },
   { id: 4, title: '立德树人 追求卓越', subtitle: '培养高素质创新型人才', color: '#3c2a5a' }
