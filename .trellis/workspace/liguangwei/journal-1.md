@@ -105,3 +105,36 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 4: 华文大学 → 君子大学 改名
+
+**Date**: 2026-06-07
+**Task**: 华文大学 → 君子大学 改名
+**Branch**: `main`
+
+### Summary
+
+将全站所有华文大学替换为君子大学，涉及12个文件约50处替换。
+
+### Main Changes
+
+(Add details)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `cd49459` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
