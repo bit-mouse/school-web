@@ -16,11 +16,12 @@ src/
 │   ├── NewsCard.vue   # News list item card
 │   └── NoticeCard.vue # Notice list item card
 ├── router/
-│   └── index.ts       # Vue Router configuration
+│   └── index.ts       # 9 routes (6 pages + news/:id + notice/:id + departments/:id)
 ├── views/             # Page-level components (one per route)
 │   ├── HomeView.vue
 │   ├── AboutView.vue
 │   ├── DepartmentsView.vue
+│   ├── DepartmentDetailView.vue
 │   ├── NewsView.vue
 │   ├── NewsDetailView.vue
 │   ├── NoticesView.vue

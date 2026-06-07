@@ -74,6 +74,47 @@ All page views follow a consistent structure:
 
 ---
 
+## Detail Page Pattern
+
+Detail pages (NewsDetailView, NoticeDetailView, DepartmentDetailView) follow a consistent pattern:
+
+1. Use `useRoute()` to get `:id` param
+2. Use `computed()` to look up item from in-component data array
+3. Show banner with item-specific color/theme
+4. Show content sections in cards
+5. Include "← 返回列表" back link at bottom
+
+```typescript
+const route = useRoute()
+const item = computed(() =>
+  items.find(i => i.id === Number(route.params.id))
+)
+```
+
+---
+
+## Clickable Card Pattern
+
+List page cards that link to detail pages use `<router-link>` wrapping:
+
+```vue
+<router-link :to="`/departments/${dept.id}`" class="dept-card card">
+  <!-- card content -->
+</router-link>
+```
+
+Must reset link styles to prevent breaking card appearance:
+
+```css
+.dept-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+```
+
+---
+
 ## Common Mistakes
 
 - Don't use `<style>` without `scoped` — will leak styles globally
