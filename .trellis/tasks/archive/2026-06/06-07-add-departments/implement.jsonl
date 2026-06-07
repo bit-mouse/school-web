@@ -1,0 +1,3 @@
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend guidelines entry point for Vue 3 patterns"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Component patterns and props conventions for new detail page"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "TypeScript type conventions for Department interface extension"}
