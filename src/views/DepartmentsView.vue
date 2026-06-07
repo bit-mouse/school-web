@@ -95,7 +95,7 @@ const departments: Department[] = [
     <section class="departments-section">
       <div class="container">
         <div class="departments-grid">
-          <div v-for="dept in departments" :key="dept.id" class="dept-card card">
+          <router-link v-for="dept in departments" :key="dept.id" :to="`/departments/${dept.id}`" class="dept-card card">
             <div class="dept-header" :style="{ backgroundColor: dept.color }">
               <h3 class="dept-name">{{ dept.name }}</h3>
             </div>
@@ -108,7 +108,7 @@ const departments: Department[] = [
                 </div>
               </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </section>
@@ -145,8 +145,11 @@ const departments: Department[] = [
 }
 
 .dept-card {
+  display: block;
   overflow: hidden;
   padding: 0;
+  color: inherit;
+  text-decoration: none;
 }
 
 .dept-header {
@@ -195,6 +198,28 @@ const departments: Department[] = [
 @media (max-width: 768px) {
   .departments-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .departments-banner-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .departments-banner-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .dept-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .dept-name {
+    font-size: var(--font-size-lg);
+  }
+
+  .dept-body {
+    padding: var(--spacing-md);
   }
 }
 </style>
