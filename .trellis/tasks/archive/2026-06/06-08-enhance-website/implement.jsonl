@@ -1,0 +1,5 @@
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend guidelines entry point"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Component patterns, detail page pattern, clickable card pattern"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Quality standards and forbidden patterns"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "TypeScript conventions"}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Directory layout for new components"}
