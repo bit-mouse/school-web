@@ -4,9 +4,11 @@ const timeline = [
   { year: '1960', event: '成为全国重点大学，新增医学、法学学科' },
   { year: '1978', event: '恢复高考后首批招收研究生，开启学位教育' },
   { year: '1985', event: '更名为君子大学，确立综合性大学发展定位' },
-  { year: '1995', event: '进入"211工程"重点建设高校行列' },
-  { year: '2001', event: '进入"985工程"优势学科创新平台' },
+  { year: '1995', event: '进入"211工程"重点建设高校行列，获首批博士学位授权' },
+  { year: '2001', event: '进入"985工程"优势学科创新平台，成立研究生院' },
+  { year: '2008', event: '新校区一期工程竣工投入使用，办学空间大幅拓展' },
   { year: '2017', event: '入选国家"双一流"建设高校A类名单' },
+  { year: '2018', event: '获批设立人工智能、数据科学等新工科专业，推进学科交叉融合' },
   { year: '2023', event: '建校七十周年，在校生规模突破3.5万人' }
 ]
 
@@ -118,17 +120,45 @@ const scenerySpots = [
   padding: var(--spacing-3xl) 0;
   text-align: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.about-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .about-banner-title {
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
 }
 
 .about-banner-subtitle {
   font-size: var(--font-size-lg);
   opacity: 0.8;
+  position: relative;
+  z-index: 1;
 }
 
 .about-section {

@@ -18,7 +18,12 @@ const noticesList: NoticeItem[] = [
   { id: 7, title: '关于调整校园停车管理规定的通知', date: '2026-05-15', department: '后勤处' },
   { id: 8, title: '2026年度大学生创新创业项目申报通知', date: '2026-05-10', department: '教务处' },
   { id: 9, title: '关于开展2026年度教职工体检的通知', date: '2026-05-05', department: '人事处' },
-  { id: 10, title: '关于图书馆暑期开放时间调整的通知', date: '2026-05-01', department: '图书馆' }
+  { id: 10, title: '关于图书馆暑期开放时间调整的通知', date: '2026-05-01', department: '图书馆' },
+  { id: 11, title: '关于2026年秋季学期教学安排的通知', date: '2026-04-28', department: '教务处' },
+  { id: 12, title: '关于校园道路及管网改造施工的通知', date: '2026-04-22', department: '后勤处' },
+  { id: 13, title: '关于加强实验室安全管理工作的提醒', date: '2026-04-15', department: '保卫处' },
+  { id: 14, title: '关于图书馆新增电子资源试用的通知', date: '2026-04-08', department: '图书馆' },
+  { id: 15, title: '关于校园网络系统升级维护的通知', date: '2026-04-01', department: '信息中心' }
 ]
 </script>
 
@@ -53,17 +58,45 @@ const noticesList: NoticeItem[] = [
   padding: var(--spacing-3xl) 0;
   text-align: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.notices-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.notices-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .notices-banner-title {
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
 }
 
 .notices-banner-subtitle {
   font-size: var(--font-size-lg);
   opacity: 0.8;
+  position: relative;
+  z-index: 1;
 }
 
 .notices-section {

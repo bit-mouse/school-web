@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const contactInfo = [
-  { label: '学校地址', value: '北京市海淀区华文路1号 邮编：100080', icon: '地' },
+  { label: '学校地址', value: '北京市海淀区君子路1号 邮编：100080', icon: '地' },
   { label: '联系电话', value: '010-88886666（总机）', icon: '电' },
   { label: '传真号码', value: '010-88886667', icon: '传' },
-  { label: '电子邮箱', value: 'info@huawen.edu.cn', icon: '邮' },
+  { label: '电子邮箱', value: 'info@junzi.edu.cn', icon: '邮' },
   { label: '招生咨询', value: '010-88886668（招生办）', icon: '招' },
-  { label: '官方网站', value: 'www.huawen.edu.cn', icon: '网' }
+  { label: '官方网站', value: 'www.junzi.edu.cn', icon: '网' }
 ]
 
 const offices = [
@@ -55,9 +55,10 @@ const offices = [
             <h2 class="section-title">校园位置</h2>
             <div class="contact-map-placeholder">
               <div class="map-placeholder-content">
-                <span class="map-placeholder-icon">&#9679;</span>
-                <span class="map-placeholder-text">北京市海淀区华文路1号</span>
-                <span class="map-placeholder-note">地图区域（示例展示）</span>
+                <div class="map-compass">&#10148;</div>
+                <span class="map-placeholder-text">北京市海淀区君子路1号</span>
+                <span class="map-placeholder-note">地图加载区域</span>
+                <div class="map-coords">39.98N, 116.31E</div>
               </div>
             </div>
           </div>
@@ -90,7 +91,7 @@ const offices = [
           <div class="feedback-channels">
             <div class="feedback-channel">
               <span class="feedback-channel-label">意见邮箱</span>
-              <span class="feedback-channel-value">feedback@huawen.edu.cn</span>
+              <span class="feedback-channel-value">feedback@junzi.edu.cn</span>
             </div>
             <div class="feedback-channel">
               <span class="feedback-channel-label">信访电话</span>
@@ -116,17 +117,45 @@ const offices = [
   padding: var(--spacing-3xl) 0;
   text-align: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .contact-banner-title {
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
 }
 
 .contact-banner-subtitle {
   font-size: var(--font-size-lg);
   opacity: 0.8;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-section {
@@ -203,18 +232,37 @@ const offices = [
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--color-border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-light) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 .map-placeholder-content {
   text-align: center;
   color: var(--color-text-muted);
+  position: relative;
+  z-index: 1;
+  background: var(--color-bg);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
 }
 
-.map-placeholder-icon {
-  font-size: 24px;
-  color: var(--color-primary);
-  display: block;
-  margin-bottom: var(--spacing-sm);
+.map-compass {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  margin: 0 auto var(--spacing-sm);
+  transform: rotate(-45deg);
 }
 
 .map-placeholder-text {
@@ -222,11 +270,20 @@ const offices = [
   color: var(--color-text);
   display: block;
   margin-bottom: var(--spacing-xs);
+  font-weight: 500;
 }
 
 .map-placeholder-note {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-muted);
+}
+
+.map-coords {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-family: monospace;
 }
 
 /* Offices */

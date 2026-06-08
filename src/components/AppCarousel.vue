@@ -6,13 +6,14 @@ interface Slide {
   title: string
   subtitle: string
   color: string
+  accent: string
 }
 
 const slides: Slide[] = [
-  { id: 1, title: '博学笃行 厚德载物', subtitle: '君子大学2026年招生工作进行中', color: '#1a3a5c' },
-  { id: 2, title: '科技创新 引领未来', subtitle: '我校科研团队取得重大突破', color: '#2a5a3c' },
-  { id: 3, title: '国际交流 开放办学', subtitle: '与世界一流大学深度合作', color: '#5a2a3c' },
-  { id: 4, title: '立德树人 追求卓越', subtitle: '培养高素质创新型人才', color: '#3c2a5a' }
+  { id: 1, title: '博学笃行 厚德载物', subtitle: '君子大学2026年招生工作进行中', color: '#1a3a5c', accent: '#2a5a8c' },
+  { id: 2, title: '科技创新 引领未来', subtitle: '我校科研团队取得重大突破', color: '#2a5a3c', accent: '#4a8a5c' },
+  { id: 3, title: '国际交流 开放办学', subtitle: '与世界一流大学深度合作', color: '#5a2a3c', accent: '#8a4a6c' },
+  { id: 4, title: '立德树人 追求卓越', subtitle: '培养高素质创新型人才', color: '#3c2a5a', accent: '#6b4a8b' }
 ]
 
 const currentIndex = ref(0)
@@ -63,9 +64,16 @@ onUnmounted(() => {
           class="carousel-slide"
           :style="{ backgroundColor: slides[currentIndex].color }"
         >
+          <!-- Decorative elements -->
+          <div class="carousel-deco-circle carousel-deco-circle--1"></div>
+          <div class="carousel-deco-circle carousel-deco-circle--2"></div>
+          <div class="carousel-deco-line carousel-deco-line--1"></div>
+          <div class="carousel-deco-line carousel-deco-line--2"></div>
+
           <div class="carousel-content container">
             <h2 class="carousel-title">{{ slides[currentIndex].title }}</h2>
             <p class="carousel-subtitle">{{ slides[currentIndex].subtitle }}</p>
+            <span class="carousel-accent-line" :style="{ backgroundColor: slides[currentIndex].accent }"></span>
           </div>
         </div>
       </transition>
@@ -112,9 +120,53 @@ onUnmounted(() => {
   align-items: center;
 }
 
+/* Decorative shapes */
+.carousel-deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.carousel-deco-circle--1 {
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  right: -60px;
+}
+
+.carousel-deco-circle--2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: 5%;
+  border-width: 1px;
+}
+
+.carousel-deco-line {
+  position: absolute;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.carousel-deco-line--1 {
+  width: 60%;
+  top: 30%;
+  right: -10%;
+  transform: rotate(-15deg);
+}
+
+.carousel-deco-line--2 {
+  width: 40%;
+  bottom: 25%;
+  left: -5%;
+  transform: rotate(8deg);
+}
+
 .carousel-content {
   color: #fff;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .carousel-title {
@@ -130,6 +182,14 @@ onUnmounted(() => {
   opacity: 0.9;
   letter-spacing: 1px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--spacing-md);
+}
+
+.carousel-accent-line {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
 }
 
 .carousel-btn {
@@ -218,6 +278,16 @@ onUnmounted(() => {
     height: 36px;
     font-size: 18px;
   }
+
+  .carousel-deco-circle--1 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .carousel-deco-circle--2 {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -227,6 +297,18 @@ onUnmounted(() => {
 
   .carousel-title {
     font-size: var(--font-size-xl);
+  }
+
+  .carousel-deco-circle--1 {
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    right: -30px;
+  }
+
+  .carousel-deco-circle--2 {
+    width: 80px;
+    height: 80px;
   }
 }
 </style>

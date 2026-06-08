@@ -121,17 +121,45 @@ const departments: Department[] = [
   padding: var(--spacing-3xl) 0;
   text-align: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.departments-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.departments-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .departments-banner-title {
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
 }
 
 .departments-banner-subtitle {
   font-size: var(--font-size-lg);
   opacity: 0.8;
+  position: relative;
+  z-index: 1;
 }
 
 .departments-section {

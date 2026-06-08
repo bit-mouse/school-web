@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear()
       <div class="footer-main">
         <div class="footer-info">
           <div class="footer-logo">
-            <span class="footer-logo-icon">华</span>
+            <span class="footer-logo-icon">君</span>
             <span class="footer-logo-name">君子大学</span>
           </div>
           <p class="footer-desc">
@@ -32,9 +32,9 @@ const currentYear = new Date().getFullYear()
           </div>
           <div class="footer-link-group">
             <h4 class="footer-link-title">联系方式</h4>
-            <p class="footer-link">地址：北京市海淀区华文路1号</p>
+            <p class="footer-link">地址：北京市海淀区君子路1号</p>
             <p class="footer-link">电话：010-88886666</p>
-            <p class="footer-link">邮箱：info@huawen.edu.cn</p>
+            <p class="footer-link">邮箱：info@junzi.edu.cn</p>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import AppCarousel from '../components/AppCarousel.vue'
 import NewsCard from '../components/NewsCard.vue'
 import NoticeCard from '../components/NoticeCard.vue'
@@ -24,10 +25,72 @@ const recentNotices = [
 ]
 
 const stats = [
-  { value: '70+', label: '年办学历史' },
-  { value: '20', label: '学院/系' },
-  { value: '35000+', label: '在校师生' },
-  { value: '85', label: '本科专业' }
+  { value: 70, suffix: '+', label: '年办学历史' },
+  { value: 20, suffix: '', label: '学院/系' },
+  { value: 35000, suffix: '+', label: '在校师生' },
+  { value: 85, suffix: '', label: '本科专业' }
+]
+
+const animatedStats = ref(stats.map(() => 0))
+let statsAnimated = false
+let statsObserver: IntersectionObserver | null = null
+const statsRef = ref<HTMLElement | null>(null)
+
+function animateStats() {
+  if (statsAnimated) return
+  statsAnimated = true
+  const duration = 1500
+  const startTime = performance.now()
+
+  function update(currentTime: number) {
+    const elapsed = currentTime - startTime
+    const progress = Math.min(elapsed / duration, 1)
+    const eased = 1 - Math.pow(1 - progress, 3)
+
+    animatedStats.value = stats.map(stat => {
+      return Math.round(stat.value * eased)
+    })
+
+    if (progress < 1) {
+      requestAnimationFrame(update)
+    }
+  }
+
+  requestAnimationFrame(update)
+}
+
+onMounted(() => {
+  if (statsRef.value) {
+    statsObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateStats()
+      }
+    }, { threshold: 0.3 })
+    statsObserver.observe(statsRef.value)
+  }
+})
+
+onUnmounted(() => {
+  if (statsObserver) {
+    statsObserver.disconnect()
+    statsObserver = null
+  }
+})
+
+const admissions = [
+  { icon: '招', title: '招生简章', desc: '2026年面向全国招收本科生5200人，涵盖九大学科门类85个专业', color: '#1a3a5c' },
+  { icon: '培', title: '拔尖培养', desc: '强基计划、基础学科拔尖学生培养计划，打造学术精英', color: '#2a5a3c' },
+  { icon: '奖', title: '奖学金', desc: '国家奖学金、校长奖学金及各类专项奖学金，覆盖率达45%', color: '#b8860b' },
+  { icon: '际', title: '国际交流', desc: '与全球50余所知名高校建立合作关系，每年派出交换生500余人', color: '#5a2a3c' }
+]
+
+const campusLife = [
+  { title: '学术讲座', desc: '年均举办高水平学术讲座200余场，邀请国内外知名学者来校交流', gradient: 'linear-gradient(135deg, #1a3a5c, #2a5a8c)' },
+  { title: '体育赛事', desc: '校运动会、院长杯篮球赛、校园马拉松等丰富多彩的体育活动', gradient: 'linear-gradient(135deg, #2a5a3c, #4a8a5c)' },
+  { title: '社团活动', desc: '120余个学生社团，涵盖学术、文艺、公益、体育等多个领域', gradient: 'linear-gradient(135deg, #b8860b, #d4a017)' },
+  { title: '志愿服务', desc: '支教、社区服务、国际志愿者项目，年参与志愿服务超5万人次', gradient: 'linear-gradient(135deg, #5a2a3c, #8a4a6c)' },
+  { title: '艺术展演', desc: '话剧节、音乐会、美术展览，校园文化生活丰富多彩', gradient: 'linear-gradient(135deg, #3c2a5a, #6b4a8b)' },
+  { title: '国际交流', desc: '国际文化节、海外游学、国际学术会议，开阔国际视野', gradient: 'linear-gradient(135deg, #4a6b8b, #6a8bab)' }
 ]
 </script>
 
@@ -54,13 +117,30 @@ const stats = [
     </section>
 
     <!-- Stats -->
-    <section class="stats">
+    <section class="stats" ref="statsRef">
       <div class="container">
         <div class="stats-grid">
-          <div v-for="stat in stats" :key="stat.label" class="stat-item">
-            <span class="stat-value">{{ stat.value }}</span>
+          <div v-for="(stat, index) in stats" :key="stat.label" class="stat-item">
+            <span class="stat-value">{{ animatedStats[index] }}{{ stat.suffix }}</span>
             <span class="stat-label">{{ stat.label }}</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admissions -->
+    <section class="admissions-section">
+      <div class="container">
+        <h2 class="section-title">招生信息</h2>
+        <div class="admissions-grid">
+          <div v-for="item in admissions" :key="item.title" class="admission-card card">
+            <span class="admission-icon" :style="{ backgroundColor: item.color }">{{ item.icon }}</span>
+            <h3 class="admission-title">{{ item.title }}</h3>
+            <p class="admission-desc">{{ item.desc }}</p>
+          </div>
+        </div>
+        <div class="admissions-more">
+          <router-link to="/about" class="btn">查看详情</router-link>
         </div>
       </div>
     </section>
@@ -95,6 +175,21 @@ const stats = [
                 v-bind="notice"
               />
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Life -->
+    <section class="campus-section">
+      <div class="container">
+        <h2 class="section-title">校园风采</h2>
+        <div class="campus-grid">
+          <div v-for="item in campusLife" :key="item.title" class="campus-card card">
+            <div class="campus-card-header" :style="{ background: item.gradient }">
+              <h3 class="campus-card-title">{{ item.title }}</h3>
+            </div>
+            <p class="campus-card-desc">{{ item.desc }}</p>
           </div>
         </div>
       </div>
@@ -177,6 +272,53 @@ const stats = [
   margin-top: var(--spacing-xs);
 }
 
+/* Admissions */
+.admissions-section {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-bg-light);
+}
+
+.admissions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.admission-card {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.admission-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.admission-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.admission-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.admissions-more {
+  text-align: center;
+}
+
 /* Recent Section */
 .recent-section {
   padding: var(--spacing-2xl) 0;
@@ -227,6 +369,42 @@ const stats = [
   overflow: hidden;
 }
 
+/* Campus Life */
+.campus-section {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-bg-light);
+}
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.campus-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.campus-card-header {
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.campus-card-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.campus-card-desc {
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .quick-links-grid {
     flex-wrap: wrap;
@@ -250,6 +428,14 @@ const stats = [
     flex-direction: column;
     gap: var(--spacing-xl);
   }
+
+  .admissions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
@@ -263,6 +449,14 @@ const stats = [
 
   .stat-value {
     font-size: var(--font-size-3xl);
+  }
+
+  .admissions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campus-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
