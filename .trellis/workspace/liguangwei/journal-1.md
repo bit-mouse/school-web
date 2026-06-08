@@ -171,3 +171,36 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 6: 全面优化校园网站
+
+**Date**: 2026-06-08
+**Task**: 全面优化校园网站
+**Branch**: `main`
+
+### Summary
+
+全面优化君子大学校园网站：Header logo 修正、轮播图增强、banner 装饰、卡片 hover 动画、回到顶部按钮、招生信息/校园风采板块、数字滚动动画、新闻公告扩至15条、时间线扩展、地图装饰、详情页上下篇导航、页面淡入过渡
+
+### Main Changes
+
+(Add details)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `c8a6252` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
