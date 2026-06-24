@@ -5,6 +5,7 @@ interface Department {
   intro: string
   majors: string[]
   color: string
+  image: string
 }
 
 const departments: Department[] = [
@@ -13,70 +14,80 @@ const departments: Department[] = [
     name: '文学院',
     intro: '君子大学文学院是学校历史最悠久的学院之一，拥有中国语言文学一级学科博士学位授权点，在古典文学、现当代文学、语言学等领域具有深厚的学术积淀。',
     majors: ['汉语言文学', '汉语言', '古典文献学', '应用语言学', '比较文学与世界文学'],
-    color: '#1a3a5c'
+    color: '#1a3a5c',
+    image: 'https://picsum.photos/id/10/600/300'
   },
   {
     id: 2,
     name: '理学院',
     intro: '理学院涵盖数学、物理、化学三大基础学科，拥有多个国家重点实验室，在基础科学研究方面成果丰硕，培养了大批杰出科学家。',
     majors: ['数学与应用数学', '信息与计算科学', '物理学', '应用物理学', '化学', '应用化学'],
-    color: '#2a5a3c'
+    color: '#2a5a3c',
+    image: 'https://picsum.photos/id/20/600/300'
   },
   {
     id: 3,
     name: '工学院',
     intro: '工学院是学校规模最大的学院，设有机械、电子、计算机、土木等多个工程学科，与众多知名企业建立产学研合作关系，毕业生就业率连续多年位居前列。',
     majors: ['机械工程', '电气工程及其自动化', '计算机科学与技术', '软件工程', '土木工程', '材料科学与工程'],
-    color: '#5a2a3c'
+    color: '#5a2a3c',
+    image: 'https://picsum.photos/id/24/600/300'
   },
   {
     id: 4,
     name: '医学院',
     intro: '医学院依托学校综合学科优势，致力于培养高素质医学人才，拥有附属医院3所，在临床医学、基础医学、公共卫生等领域享有盛誉。',
     majors: ['临床医学', '基础医学', '预防医学', '药学', '护理学'],
-    color: '#3c2a5a'
+    color: '#3c2a5a',
+    image: 'https://picsum.photos/id/26/600/300'
   },
   {
     id: 5,
     name: '法学院',
     intro: '法学院是国内法学教育的重要基地，拥有法学一级学科博士学位授权点，在宪法与行政法、民商法、国际法等领域具有突出优势。',
     majors: ['法学', '政治学与行政学', '国际政治', '社会学'],
-    color: '#5a5a1a'
+    color: '#5a5a1a',
+    image: 'https://picsum.photos/id/27/600/300'
   },
   {
     id: 6,
     name: '经济管理学院',
     intro: '经济管理学院融合经济学与管理学两大学科，在宏观经济研究、企业管理、金融工程等领域具有较强影响力，MBA项目排名全国前列。',
     majors: ['经济学', '金融学', '国际经济与贸易', '工商管理', '会计学', '市场营销'],
-    color: '#1a5a5a'
+    color: '#1a5a5a',
+    image: 'https://picsum.photos/id/28/600/300'
   },
   {
     id: 7,
     name: '教育学院',
     intro: '教育学院致力于教育科学研究与教育人才培养，在教育政策研究、课程与教学论、高等教育管理等领域处于国内领先水平。',
     majors: ['教育学', '教育技术学', '学前教育', '特殊教育', '心理学'],
-    color: '#8b4a6b'
+    color: '#8b4a6b',
+    image: 'https://picsum.photos/id/29/600/300'
   },
   {
     id: 8,
     name: '艺术学院',
     intro: '艺术学院汇聚了美术、音乐、设计等艺术学科，注重艺术创作与理论研究相结合，培养具有创新精神和实践能力的艺术人才。',
     majors: ['美术学', '视觉传达设计', '环境设计', '音乐表演', '舞蹈学'],
-    color: '#4a6b8b'
+    color: '#4a6b8b',
+    image: 'https://picsum.photos/id/30/600/300'
   },
   {
     id: 9,
     name: '外国语学院',
     intro: '外国语学院设有英语、日语、法语、德语等多个语种专业，注重语言能力与跨文化交际能力的培养，与多所海外高校建立交换生项目。',
     majors: ['英语', '日语', '法语', '德语', '翻译', '商务英语'],
-    color: '#6b4a8b'
+    color: '#6b4a8b',
+    image: 'https://picsum.photos/id/32/600/300'
   },
   {
     id: 10,
     name: '信息科学学院',
     intro: '信息科学学院聚焦人工智能、大数据、网络安全等前沿领域，与多家科技企业深度合作，致力于培养新一代信息技术人才。',
     majors: ['人工智能', '数据科学与大数据技术', '信息安全', '物联网工程', '电子信息工程'],
-    color: '#4a8b6b'
+    color: '#4a8b6b',
+    image: 'https://picsum.photos/id/36/600/300'
   }
 ]
 </script>
@@ -96,7 +107,7 @@ const departments: Department[] = [
       <div class="container">
         <div class="departments-grid">
           <router-link v-for="dept in departments" :key="dept.id" :to="`/departments/${dept.id}`" class="dept-card card">
-            <div class="dept-header" :style="{ backgroundColor: dept.color }">
+            <div class="dept-header" :style="{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(${dept.image})` }">
               <h3 class="dept-name">{{ dept.name }}</h3>
             </div>
             <div class="dept-body">
@@ -181,13 +192,20 @@ const departments: Department[] = [
 }
 
 .dept-header {
-  padding: var(--spacing-md) var(--spacing-lg);
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-lg);
   color: #fff;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .dept-name {
   font-size: var(--font-size-xl);
   font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .dept-body {
@@ -227,6 +245,11 @@ const departments: Department[] = [
   .departments-grid {
     grid-template-columns: 1fr;
   }
+
+  .dept-header {
+    height: 140px;
+    padding: var(--spacing-md);
+  }
 }
 
 @media (max-width: 480px) {
@@ -239,6 +262,7 @@ const departments: Department[] = [
   }
 
   .dept-header {
+    height: 120px;
     padding: var(--spacing-sm) var(--spacing-md);
   }
 

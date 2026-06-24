@@ -16,7 +16,9 @@
       "Bash(bit-mouse/school-web)",
       "Bash(git push *)",
       "Bash(sed -i '' 's/华文大学/君子大学/g' /Users/tony/Documents/claude_code_project/school_web/src/style.css /Users/tony/Documents/claude_code_project/school_web/src/components/AppCarousel.vue /Users/tony/Documents/claude_code_project/school_web/src/components/AppHeader.vue /Users/tony/Documents/claude_code_project/school_web/src/components/AppFooter.vue /Users/tony/Documents/claude_code_project/school_web/src/views/HomeView.vue /Users/tony/Documents/claude_code_project/school_web/src/views/AboutView.vue /Users/tony/Documents/claude_code_project/school_web/src/views/DepartmentsView.vue /Users/tony/Documents/claude_code_project/school_web/src/views/NewsView.vue /Users/tony/Documents/claude_code_project/school_web/src/views/NewsDetailView.vue /Users/tony/Documents/claude_code_project/school_web/src/views/NoticesView.vue /Users/tony/Documents/claude_code_project/school_web/src/views/NoticeDetailView.vue)",
-      "Bash(name=\"description\" string=\"true\">Replace 华文大学 with 君子大学 in all source files)"
+      "Bash(name=\"description\" string=\"true\">Replace 华文大学 with 君子大学 in all source files)",
+      "Bash(open *)",
+      "Bash(gh pr *)"
     ]
   }
 }
