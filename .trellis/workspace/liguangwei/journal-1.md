@@ -204,3 +204,36 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 7: 院系介绍卡片添加图片背景
+
+**Date**: 2026-06-24
+**Task**: 院系介绍卡片添加图片背景
+**Branch**: `main`
+
+### Summary
+
+将 DepartmentsView 院系卡片顶部纯色背景替换为 picsum.photos 在线图片 + 渐变叠加层，提升页面视觉效果
+
+### Main Changes
+
+(Add details)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `522276c` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
