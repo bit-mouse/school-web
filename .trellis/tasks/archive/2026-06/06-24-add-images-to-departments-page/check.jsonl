@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Vue 组件规范校验"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "代码质量检查"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "TypeScript 类型检查"}
+{"file": ".trellis/tasks/06-24-add-images-to-departments-page/prd.md", "reason": "对照 PRD 验收"}

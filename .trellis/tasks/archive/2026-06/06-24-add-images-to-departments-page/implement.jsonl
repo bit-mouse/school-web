@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Vue 组件编写规范"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "TypeScript 类型接口设计规范"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "代码质量要求"}
+{"file": ".trellis/tasks/06-24-add-images-to-departments-page/prd.md", "reason": "任务 PRD — 需求和实现方案"}
